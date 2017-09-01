@@ -12,7 +12,7 @@ export const font = {
 };
 
 export const Container = styled.div`
-  font-family: capture-it, special-elite;
+  font-family: special-elite;
   font-size: ${font.size * 2}px;
   box-sizing: border-box;
   max-width: 960px;

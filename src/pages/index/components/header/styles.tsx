@@ -1,6 +1,8 @@
 import { default as styled } from 'styled-components';
 
 import A from '../../../components/a/';
+import H1 from '../../../components/h1/';
+
 import * as globalStyles from '../../styles';
 
 const paddingVert = globalStyles.font.size * 1;
@@ -11,10 +13,9 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const Title = styled.div`
+export const Title = styled(H1)`
   text-align: center;
-  font-size: ${globalStyles.font.size * 4}px;
-  line-height: ${globalStyles.font.size * 4}px;
+  margin: 0px;
 `;
 
 export const Email = styled.div`
