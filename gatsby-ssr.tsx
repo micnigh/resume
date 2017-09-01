@@ -2,6 +2,9 @@ import * as React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import { merge } from 'lodash';
+
+import data from './src/data/';
 
 import createStore from './src/state/createStore.production';
 
@@ -14,7 +17,8 @@ import createStore from './src/state/createStore.production';
  */
 export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadComponents }: any) => {
   const sheet = new ServerStyleSheet();
-  const store = createStore();
+  const initialState =  merge({}, data);
+  const store = createStore(initialState);
 
   const ConnectedBody = () => (
     <Provider store={store}>

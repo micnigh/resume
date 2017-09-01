@@ -1,28 +1,24 @@
 import * as React from 'react';
-import Link from 'gatsby-link';
+import A from '../components/a/';
+import Link from '../components/link/';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
-const GithubLogo = require('!svg-react-loader!svg-icon/dist/svg/ionic/social-github.svg');
+import { Container } from './styles';
+import Header from './components/header/';
+import Summary from './components/summary/';
+import Skills from './components/skills/';
+import Experience from './components/experience/';
+import Education from './components/education/';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   return {};
 };
 
 export class IndexPage extends React.Component<any, any> {
-
-  componentDidMount() {
-    const { dispatch } = this.props;
-
-    dispatch({
-      type: 'test',
-      payload: {},
-    });
-  }
-
   render() {
     return (
-      <div>
+      <Container>
         <Helmet
           title='gatsby starter kit'
           meta={[
@@ -30,11 +26,12 @@ export class IndexPage extends React.Component<any, any> {
             { name: 'keywords', content: 'gatsby' },
           ]}
         />
-        <div>
-          <p>content goes here</p>
-          <span>can svg too <GithubLogo style={{ width: `25px`, fill: `#0f0` }} /></span>
-        </div>
-      </div>
+        <Header/>
+        <Summary/>
+        <Skills/>
+        <Experience/>
+        <Education/>
+      </Container>
     );
   }
 }
