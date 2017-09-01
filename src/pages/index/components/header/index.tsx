@@ -12,8 +12,18 @@ export class Header extends React.Component {
         <Title>MICHAEL NIGH</Title>
         <Email><A href={`mailto:contact@mnigh.com`}>contact@mnigh.com</A></Email>
         <SocialNetworkLinks>
-          <Logo href={`https://github.com/micnigh/`}><GithubLogo/></Logo>
-          <Logo href={`https://www.linkedin.com/in/michaelnigh`}><LinkedinLogo/></Logo>
+          <Logo
+            title={`Check out my github`}
+            href={`https://github.com/micnigh/`}
+          >
+            <GithubLogo/>
+          </Logo>
+          <Logo
+            title={`Visit my LinkedIn`}
+            href={`https://www.linkedin.com/in/michaelnigh`}
+          >
+            <LinkedinLogo/>
+          </Logo>
         </SocialNetworkLinks>
       </Container>
     );
