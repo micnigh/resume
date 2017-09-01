@@ -1,14 +1,18 @@
 import { default as styled } from 'styled-components';
 import Link from 'gatsby-link';
-
-const color = `#333`;
+import * as globalStyles from '../../index/styles';
 
 export const Container = styled.a`
-  color: ${color};
+  color: ${globalStyles.color.link};
   text-decoration: none;
   transition: all 400ms ease-out;
-  text-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3);
   &:visited {
-    color: ${color};
+    color: ${globalStyles.color.link};
+  }
+  &:hover {
+    cursor: pointer;
+    text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.65);
+    color: ${globalStyles.color.linkHover};
   }
 `;

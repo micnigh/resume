@@ -1,17 +1,23 @@
 import { default as styled, injectGlobal, css } from 'styled-components';
+import 'normalize.css';
 
 export const color = {
+  text: `#333`,
   link: `#333`,
-  linkHover: `#33f`,
+  linkHover: `#000`,
 };
 
 export const font = {
-  size: 16, /** px */
+  size: 12, /** px */
 };
 
 export const Container = styled.div`
   font-family: capture-it, special-elite;
   font-size: ${font.size * 2}px;
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 0px auto;
+  color: ${color.text};
 `;
 
 export const loadFontFace = (name: string) => {
