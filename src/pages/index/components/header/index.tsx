@@ -3,7 +3,7 @@ import { Container, Logo, Title, Email, SocialNetworkLinks } from './styles';
 import A from '../../../components/a/';
 
 const GithubLogo = require('!svg-react-loader!svg-icon/dist/svg/ionic/social-github.svg');
-const LinkedinLogo = require('!svg-react-loader!svg-icon/dist/svg/icomoon/linkedin2.svg')
+const LinkedinLogo = require('!svg-react-loader!svg-icon/dist/svg/icomoon/linkedin2.svg');
 
 export class Header extends React.Component {
   render() {

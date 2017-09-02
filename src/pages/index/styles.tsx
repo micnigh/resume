@@ -1,5 +1,5 @@
 import { default as styled, injectGlobal, css } from 'styled-components';
-import 'normalize.css';
+// import 'normalize.css';
 
 export const color = {
   text: `#333`,
@@ -13,9 +13,9 @@ export const font = {
 
 export const Container = styled.div`
   font-family: special-elite;
-  font-size: ${font.size * 2}px;
+  font-size: ${font.size * 1.5}px;
   box-sizing: border-box;
-  max-width: 960px;
+  max-width: 760px;
   margin: 0px auto;
   color: ${color.text};
 `;

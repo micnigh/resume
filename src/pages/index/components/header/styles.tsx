@@ -1,6 +1,6 @@
 import { default as styled } from 'styled-components';
 
-import A from '../../../components/a/';
+import ASvg from '../../../components/aSvg/';
 import H1 from '../../../components/h1/';
 
 import * as globalStyles from '../../styles';
@@ -32,18 +32,10 @@ export const SocialNetworkLinks = styled.div`
   bottom: ${paddingVert}px;
 `;
 
-export const Logo = styled(A)`
+export const Logo = styled(ASvg)`
   margin-left: ${globalStyles.font.size * 2}px;
   line-height: ${globalStyles.font.size * 2}px;
   svg {
     width: ${globalStyles.font.size * 2}px;
-    vertical-align: middle;
-    fill: ${globalStyles.color.link};
-    filter: drop-shadow( -1px 1px 1px rgba(0, 0, 0, 0.3));
-
-    &:hover {
-      fill: ${globalStyles.color.linkHover};
-      filter: drop-shadow( -1px 1px 1px rgba(0, 0, 0, 0.5));
-    }
   }
 `;
