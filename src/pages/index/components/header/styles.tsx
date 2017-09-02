@@ -5,11 +5,15 @@ import H1 from '../../../components/h1/';
 
 import * as globalStyles from '../../styles';
 
+const iconSize = {
+  desktop: globalStyles.font.size * 2,
+  phone: globalStyles.font.size * 3,
+};
+
 const paddingVert = globalStyles.font.size * 1;
 
 export const Container = styled.div`
-  margin-top: ${globalStyles.font.size * 2}px;
-  padding: ${paddingVert}px 0px;
+  margin-top: ${globalStyles.font.size * 3}px;
   position: relative;
 `;
 
@@ -26,16 +30,31 @@ export const Email = styled.div`
   line-height: ${globalStyles.font.size * 2}px;
 `;
 
+export const SVGLink = styled(ASvg)`
+  margin-left: ${globalStyles.font.size * 2}px;
+  line-height: ${iconSize.desktop}px;
+  svg {
+    width: ${iconSize.desktop}px;
+  }
+`;
+
 export const SocialNetworkLinks = styled.div`
   position: absolute;
   right: 0px;
-  bottom: ${paddingVert}px;
-`;
+  bottom: 0px;
 
-export const Logo = styled(ASvg)`
-  margin-left: ${globalStyles.font.size * 2}px;
-  line-height: ${globalStyles.font.size * 2}px;
-  svg {
-    width: ${globalStyles.font.size * 2}px;
+  @media screen and (max-width: 768px) {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin-top: ${globalStyles.font.size * 2}px;
+    height: ${iconSize.phone}px;
+    ${SVGLink} {
+      line-height: ${iconSize.phone}px;
+      svg {
+        width: ${iconSize.phone}px;
+        height: ${iconSize.phone}px;
+      }
+    }
   }
 `;

@@ -5,13 +5,13 @@ import H from '../../../../../components/h/';
 import Indent from '../../../../../components/indent/';
 import Markdown from '../../../../../components/markdown/';
 
-import * as Icons from '../../../../../icons/';
+import * as SVGIcons from '../../../../../icons/';
 
 import { sortExperience } from '../../';
 
-const LinkLogo = require('!svg-react-loader!svg-icon/dist/svg/awesome/chain.svg');
+const SVGLinkIcon = require('!svg-react-loader!svg-icon/dist/svg/awesome/chain.svg');
 
-import { Container, Header, Date, Logo, LinksAndIcons, LogoSvg, IconsContainer } from './styles';
+import { Container, Header, Title, Date, SVGLink, LinksAndIcons, Icon, Icons } from './styles';
 
 import { Experience as ExperienceType, Project as ProjectType } from '../../../../../../data/experiences/index.types';
 
@@ -22,6 +22,7 @@ export const formatDate = (date: string) => {
 export class Experience extends React.Component<{ experience: ExperienceType | ProjectType, level: number }, any> {
   render() {
     const { experience: { title, start, end, summaryMarkdown, projects, portfolio, icons }, level } = this.props;
+    const renderDate = start || end;
     const renderProjects = projects && projects.length > 0;
     const renderIcons = icons && icons.length > 0;
     const headerLevel = level ? level : 3;
@@ -29,23 +30,21 @@ export class Experience extends React.Component<{ experience: ExperienceType | P
     return (
       <Container renderProjects={renderProjects} >
         <Header inline={headerInline} >
-          <H level={headerLevel} >{title}</H>
+          <Title level={headerLevel} >{title}</Title>
+          {!renderDate ? null : <Date>{`${formatDate(start)} to ${formatDate(end)}`}</Date>}
           <LinksAndIcons>
-            {portfolio ? <Logo href={portfolio.link} title={portfolio.hoverTitle} ><LinkLogo/></Logo> : null}
-            <IconsContainer>
-              {renderIcons ? icons.map((icon, i) => {
-                const IconComponent = Icons[icon];
-                return (
-                  <LogoSvg key={i} title={icon}>
-                    <IconComponent/>
-                  </LogoSvg>
-                );
-              }) : null}
-            </IconsContainer>
+            {portfolio ? <SVGLink href={portfolio.link} title={portfolio.hoverTitle} ><SVGLinkIcon/></SVGLink> : null}
+            {!renderIcons ? null :
+            <Icons>
+              {icons.map((icon, i) => {
+              const SVGIcon = SVGIcons[icon];
+              return (
+                <Icon key={i} title={icon}>
+                  <SVGIcon/>
+                </Icon>
+              ); })}
+            </Icons>}
           </LinksAndIcons>
-          <Date>
-            {!start && !end ?  null : `${formatDate(start)} to ${formatDate(end)}`}
-          </Date>
         </Header>
         <Indent>
           <Markdown source={summaryMarkdown}/>
