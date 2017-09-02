@@ -3,8 +3,13 @@ import { default as styled, injectGlobal, css } from 'styled-components';
 
 export const color = {
   text: `#333`,
+  textSecondary: `#888`,
   link: `#333`,
   linkHover: `#000`,
+  bar: `#000`,
+  barText: `#fff`,
+  barPrint: `#c5c5c5`,
+  barPrintText: `#000`,
 };
 
 export const font = {

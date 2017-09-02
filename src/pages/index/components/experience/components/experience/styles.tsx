@@ -4,9 +4,7 @@ import ASvg from '../../../../../components/aSvg/';
 import { marginSizing } from '../../../../../components/h/styles';
 
 export const Container = styled.div`
-  ${p => !p.renderProjects && css`
   page-break-inside: avoid;
-  `}
 `;
 
 export const Header = styled.div`

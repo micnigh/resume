@@ -34,6 +34,7 @@
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "devicon": "^2.0.0",
+    "enquire.js": "^2.1.6",
     "gatsby": "^1.9.17",
     "gatsby-link": "^1.6.15",
     "gatsby-plugin-react-helmet": "^1.0.5",
@@ -53,7 +54,8 @@
     "styled-components": "^2.1.2",
     "svg-react-loader": "^0.4.5",
     "ts-node": "^3.3.0",
-    "typescript": "^2.5.2"
+    "typescript": "^2.5.2",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@types/jest": "^20.0.8",
