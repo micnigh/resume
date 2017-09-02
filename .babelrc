@@ -6,6 +6,10 @@
     "react"
   ],
   "plugins": [
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    ["styled-components", {
+      "displayName": true,
+      "ssr": true
+    }]
   ]
 }

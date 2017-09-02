@@ -45,7 +45,7 @@ about/
 
 # TODO
 
- - Use it in a real project
+ - Find solution for babel-plugin-styled-components when typescript issues are resolved - [see](https://github.com/styled-components/babel-plugin-styled-components/issues/41#issuecomment-310201410)
 
 
 
