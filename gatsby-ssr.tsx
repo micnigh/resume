@@ -29,4 +29,5 @@ export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString, setHeadC
   );
 
   replaceBodyHTMLString(renderToString(<ConnectedBody/>));
+  setHeadComponents([sheet.getStyleElement()]);
 };
