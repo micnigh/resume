@@ -43,8 +43,6 @@ Features
 
 # TODO
 
- - Replace current resume
- - Update CI
  - Find solution for babel-plugin-styled-components when typescript issues are resolved - [see](https://github.com/styled-components/babel-plugin-styled-components/issues/41#issuecomment-310201410)
 
 

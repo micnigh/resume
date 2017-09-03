@@ -1,0 +1,29 @@
+env:
+  global:
+  - GIT_NAME: "'travis autodeploy'"
+  - GIT_EMAIL: autodeploy@travis-ci.org
+  - GH_REF: git@github.com:micnigh/resume.git
+
+node_js:
+  - "8"
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run deploy:ci
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: public/
+  on:
+    branch: master

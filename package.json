@@ -13,6 +13,7 @@
     "develop": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js develop",
     "serve": "serve public",
     "deploy": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths && gh-pages -d public",
+    "deploy:ci": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths",
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --env=jsdom"
   },
