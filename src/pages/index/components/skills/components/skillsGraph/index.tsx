@@ -4,6 +4,7 @@ import { throttle } from 'lodash';
 
 import { Container, Content, Guidelines, Guideline, GuidelineLabel, GuidelineLine, Graph, GraphBar, GraphBarTitle } from './styles';
 
+import { generateTooltips } from '../../../../../../misc/tooltip';
 import { Tag } from '../../../../../../data/experiences/index.types';
 
 export let tagsToDisplay = [
@@ -26,7 +27,9 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
   enquirePrintHandlers: { match: Function, unmatch: Function };
   handleResizeDebounce: {(e: any): any};
 
+  _element: HTMLElement | null = null;
   _elements = {};
+  tooltips = null;
 
   state = {
     fullTagWidth: {},
@@ -94,18 +97,20 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
     }
   }
 
+  componentWillUpdate() {
+    if (this.tooltips) {
+      this.tooltips.destroyAll();
+    }
+  }
+
   componentDidUpdate() {
     let { tags } = this.props;
     tags = tagsToDisplay.map(name => tags.find(t => t.name === name));
     tags.forEach(t => {
       let nodeBar = this._elements[`${t.name}Bar`] as HTMLElement;
       let isShorthand = this.state.isTagShorthand && this.state.isTagShorthand[`${t.name}`];
-      if (isShorthand) {
-        // enableTooltip(nodeBar);
-      } else {
-        // disableTooltip(nodeBar);
-      }
     });
+    this.tooltips = generateTooltips(this._element);
   }
 
   render() {
@@ -116,7 +121,7 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
     let yearsToRender = moment.duration(maxDuration).asYears();
 
     return (
-      <Container>
+      <Container innerRef={e => this._element = e}>
         <Content>
           <Guidelines>
             {[...Array(Math.floor(yearsToRender)).keys()].map(y => y + 1).map(y => {
@@ -141,15 +146,10 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
               let normalizedDuration = moment.duration(t.duration).asMilliseconds() / moment.duration(maxDuration).asMilliseconds();
               let percentageWidth = Math.floor(normalizedDuration * 100);
               let shorthand = false;
-              if (isRunningInBrowser) {
-                shorthand = this.state.isTagShorthand && this.state.isTagShorthand[`${t.name}`];
-              }
+              shorthand = this.state.isTagShorthand && this.state.isTagShorthand[`${t.name}`];
               return (
-                <GraphBar key={index} style={{ width: `${percentageWidth}%` }} innerRef={e => this._elements[`${t.name}Bar`] = e}>
-                  { shorthand ?
-                    <GraphBarTitle innerRef={e => this._elements[`${t.name}Title`] = e} data-tooltip-placement={`right`} title={`${t.name}`}>{t.shorthand}</GraphBarTitle> :
-                    <GraphBarTitle innerRef={e => this._elements[`${t.name}Title`] = e}>{t.name}</GraphBarTitle>
-                  }
+                <GraphBar key={index} style={{ width: `${percentageWidth}%` }} innerRef={e => this._elements[`${t.name}Bar`] = e} data-position={`right`} title={shorthand ? `${t.name}` : ``}>
+                  <GraphBarTitle innerRef={e => this._elements[`${t.name}Title`] = e}>{shorthand ? t.shorthand : t.name}</GraphBarTitle>
                 </GraphBar>
               );
             })}

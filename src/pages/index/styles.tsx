@@ -1,5 +1,6 @@
 import { default as styled, injectGlobal, css } from 'styled-components';
-// import 'normalize.css';
+import 'normalize.css';
+import 'tippy.js/dist/tippy.css';
 
 export const color = {
   text: `#333`,
@@ -43,5 +44,9 @@ export const loadFontFace = (name: string) => {
 injectGlobal`
 ${loadFontFace('capture-it')}
 ${loadFontFace('special-elite')}
+
+.tippy-tooltip {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
 
 `;

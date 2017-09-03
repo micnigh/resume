@@ -43,8 +43,9 @@ Features
 
 # TODO
 
- - Add tooltips
  - Find easy way to auto build pdf, now that chrome/firefox run headless
+ - Replace current resume
+ - Update CI
  - Find solution for babel-plugin-styled-components when typescript issues are resolved - [see](https://github.com/styled-components/babel-plugin-styled-components/issues/41#issuecomment-310201410)
 
 

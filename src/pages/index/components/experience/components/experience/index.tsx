@@ -33,14 +33,14 @@ export class Experience extends React.Component<{ experience: ExperienceType | P
           <Title level={headerLevel} >{title}</Title>
           {!renderDate ? null : <Date>{`${formatDate(start)} to ${formatDate(end)}`}</Date>}
           <LinksAndIcons>
-            {portfolio ? <SVGLink href={portfolio.link} title={portfolio.hoverTitle} ><SVGLinkIcon/></SVGLink> : null}
+            {portfolio ? <SVGLink href={portfolio.link}><SVGLinkIcon title={portfolio.hoverTitle}/></SVGLink> : null}
             {!renderIcons ? null :
             <Icons>
               {icons.map((icon, i) => {
               const SVGIcon = SVGIcons[icon];
               return (
-                <Icon key={i} title={icon}>
-                  <SVGIcon/>
+                <Icon key={i}>
+                  <SVGIcon title={icon}/>
                 </Icon>
               ); })}
             </Icons>}
