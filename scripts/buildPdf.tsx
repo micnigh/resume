@@ -17,7 +17,7 @@ export const run = async () => {
   });
   const browser = await puppeteer.launch();
   try {
-    const page = await browser.newPage();
+    const page = await browser.newPage({args: ['--no-sandbox', '--disable-setuid-sandbox']});
     await page.goto(`http://127.0.0.1:${port}/`, {
       waitUntil: 'networkidle',
       networkIdleTimeout: 500,
