@@ -1,6 +1,6 @@
-import * as fs from 'fs';
+import * as http from 'http';
 import * as util from 'util';
-import * as serve from 'serve';
+import * as express from 'express';
 import * as puppeteer from 'puppeteer';
 import * as _mkdirp from 'mkdirp';
 
@@ -9,11 +9,13 @@ const mkdirp = util.promisify(_mkdirp);
 const { exec } = require('yargs').argv;
 
 const margin = 0.4; /** inches */
-const port = 3000;
+const port = 5000;
 
 export const run = async () => {
-  const server = serve(`public/`, {
-    port,
+  const app = express();
+  app.use(`/`, express.static(`public`));
+  const server = await new Promise<http.Server>(resolve => {
+    const newServer = app.listen(port, `0.0.0.0`, () => resolve(newServer));
   });
   const browser = await puppeteer.launch();
   try {
@@ -37,7 +39,7 @@ export const run = async () => {
     console.error(e.stackTrace || e);
   } finally {
     browser.close();
-    server.stop();
+    server.close();
   }
 };
 
