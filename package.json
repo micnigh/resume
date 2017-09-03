@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-kit",
-  "description": "Gatsby starter kit",
-  "version": "1.0.0",
+  "name": "mn-resume",
+  "description": "",
+  "version": "2.0.0",
   "private": true,
   "keywords": [
     "gatsby"
@@ -10,6 +10,7 @@
   "scripts": {
     "build": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build",
     "develop": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js develop",
+    "deploy": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths && gh-pages -d public",
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --env=jsdom"
   },
@@ -69,6 +70,7 @@
     "@types/react-router-dom": "^4.0.7",
     "@types/redux-logger": "^3.0.2",
     "@types/uuid": "^3.4.1",
+    "gh-pages": "^1.0.0",
     "jest": "^20.0.4",
     "prettier": "^1.6.1",
     "svg-icon": "^0.8.2",

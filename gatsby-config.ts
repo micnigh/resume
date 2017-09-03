@@ -1,6 +1,7 @@
 export default {
+  pathPrefix: `/resume`,
   siteMetadata: {
-    title: `Gatsby Starter Kit`,
+    title: `Michael Nigh - Resume`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

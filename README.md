@@ -1,4 +1,12 @@
-[Gatsby] 1.0 starter with styled-components, typescript, redux, and jest
+[resume.mnigh.com](http://resume.mnigh.com)
+
+[micnigh.github.io/resume/](https://micnigh.github.io/resume/)
+
+[![Build Status](https://travis-ci.org/micnigh/resume.svg?branch=master)](https://travis-ci.org/micnigh/resume)
+
+# Requirements/Recommended
+
+ - [node] `v8+`
 
 # Quick start
 
@@ -15,43 +23,37 @@ npm run build
 # run tests and watch
 npm run test:watch
 
+# run deploy script
+npm run deploy
+
 ```
 
-# How is this different from gatsby default starter?
+# Stack
 
-Extends [gatsby-start-default] with
+Uses [gatsby] to generate a static site of my resume.
+
+Based on the template at [micnigh/gatsby-starter-kit]
+
+Features
 
  - [styled-components]
  - [typescript]
  - [redux]
  - [jest]
 
-Page routes have been changed to make it easier to include all related files in the same dir.  A page route is now created only when a file ends in `.page.tsx`.  All other files not found at `src/pages/*` or having the `.page.tsx` extension are assumed not be page entries.
-
-This convention allows pages to have a structure similar to below
-
-```bash
-about/
- - components/
-   - button/
-     - index.tsx
-     - styles.tsx
- - assets/
-   - check.svg
- - index.page.tsx
- - styles.tsx
-
-```
-
 # TODO
 
+ - Add tooltips
+ - Find easy way to auto build pdf, now that chrome/firefox run headless
  - Find solution for babel-plugin-styled-components when typescript issues are resolved - [see](https://github.com/styled-components/babel-plugin-styled-components/issues/41#issuecomment-310201410)
 
 
 
+[node]: http://nodejs.org/en/
 [gatsby]: http://gatsbyjs.org
 [styled-components]: http://styled-components.com
 [typescript]: http://typescriptlang.org
 [redux]: http://redux.js.org
 [jest]: http://facebook.github.io/jest
 [gatsby-start-default]: http://github.com/gatsbyjs/gatsby-starter-default
+[micnigh/gatsby-starter-kit]: https://github.com/micnigh/gatsby-starter-kit
