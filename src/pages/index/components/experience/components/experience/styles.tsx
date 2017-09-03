@@ -49,9 +49,16 @@ export const Icon = styled.span`
   line-height: ${iconSize.desktop}px;
   width: ${iconSize.desktop}px;
   height: ${iconSize.desktop}px;
+  
   svg {
     width: ${iconSize.desktop}px;
     height: ${iconSize.desktop}px;;
+
+    filter: drop-shadow( -1px 1px 0.5px rgba(0, 0, 0, 0.3));
+    
+    /**Fix image blurr on webkit browsers 
+     * https://stackoverflow.com/a/25771969 */
+    transform: translateZ(0);
   }
 `;
 

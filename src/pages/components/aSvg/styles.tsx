@@ -10,7 +10,11 @@ export const Container = styled(A)`
     height: auto;
     vertical-align: middle;
     fill: ${globalStyles.color.link};
-    filter: drop-shadow( -1px 1px 1px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow( -1px 1px 0.5px rgba(0, 0, 0, 0.3));
+    
+    /**Fix image blurr on webkit browsers 
+     * https://stackoverflow.com/a/25771969 */
+    transform: translateZ(0);
 
     &:hover {
       fill: ${globalStyles.color.linkHover};

@@ -22,4 +22,4 @@ export const Apple = require('!svg-react-loader!svg-icon/dist/svg/logos/apple.sv
 export const Android = require('!svg-react-loader!svg-icon/dist/svg/logos/android-icon.svg');
 export const Linux = require('!svg-react-loader!svg-icon/dist/svg/logos/tux.svg');
 export const Git = require('!svg-react-loader!svg-icon/dist/svg/logos/git.svg');
-export const React = require('!svg-react-loader?name=ReactSVG!svg-icon/dist/svg/logos/react.svg');
+export const React = require('!svg-react-loader?name=ReactSVG!devicon/icons/react/react-original.svg');
