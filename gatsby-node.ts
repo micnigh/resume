@@ -1,4 +1,6 @@
 import * as path from 'path';
+import buildPdf from './scripts/buildPdf';
+
 
 export const createPages = async ({ boundActionCreators, graphql }: any) => {
   const { createPage } = boundActionCreators;
@@ -38,4 +40,8 @@ export const modifyBabelrc = ({ babelrc }: any, { plugins, ...options }: any) =>
 
 export const modifyWebpackConfig = ({ config, stage }: any) => {
   return config;
+};
+
+export const onPostBuild = async () => {
+  await buildPdf();
 };
