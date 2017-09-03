@@ -24,6 +24,9 @@ export const run = async () => {
       waitUntil: 'networkidle',
       networkIdleTimeout: 5000,
     });
+    // wait for first render - may be necessary for web fonts to load
+    // https://github.com/GoogleChrome/puppeteer/issues/422
+    await page.screenshot();
     await mkdirp(`public/download/`);
     await page.pdf({
       path: `public/download/Michael-Nigh.pdf`,
