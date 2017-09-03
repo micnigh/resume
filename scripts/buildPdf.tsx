@@ -9,15 +9,16 @@ const mkdirp = util.promisify(_mkdirp);
 const { exec } = require('yargs').argv;
 
 const margin = 0.4; /** inches */
+const port = 3000;
 
 export const run = async () => {
   const server = serve(`public/`, {
-    port: 5000,
+    port,
   });
   const browser = await puppeteer.launch();
   try {
     const page = await browser.newPage();
-    await page.goto(`http://127.0.0.1:5000/`, {
+    await page.goto(`http://127.0.0.1:${port}/`, {
       waitUntil: 'networkidle',
       networkIdleTimeout: 500,
     });
