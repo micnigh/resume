@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  travis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../../:/home/travis/resume/
+    working_dir: /home/travis/resume/
