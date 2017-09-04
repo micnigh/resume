@@ -48,7 +48,7 @@ export const run = async () => {
       buildPDFAthena(),
     ]);
     
-    let preferredPdfBuilder = isWindows && successAthena ? `athena` : `puppeteer`;
+    let preferredPdfBuilder = `athena`;
     
     await copyFile(`${pdfPath}.${preferredPdfBuilder}.pdf`, `${pdfPath}`);
     success = true;
