@@ -4,6 +4,7 @@ import { argv } from 'yargs';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as http from 'http';
+import * as os from 'os';
 import * as util from 'util';
 import * as express from 'express';
 import * as puppeteer from 'puppeteer';
@@ -39,15 +40,18 @@ export const run = async () => {
   
   try {
     await mkdirp(`public/download/`);
-    const successes = await Promise.all([
+
+    const isWindows = /^win/.test(os.platform());
+
+    const [successPuppet, successAthena] = await Promise.all([
       buildPDFPuppeteer(),
       buildPDFAthena(),
     ]);
-    if (successes.every(s => s)) {
-      // use athena pdf over puppeteer for now
-      await copyFile(`${pdfPath}.athena.pdf`, `${pdfPath}`);
-      success = true;
-    }
+    
+    let preferredPdfBuilder = isWindows && successAthena ? `athena` : `puppeteer`;
+    
+    await copyFile(`${pdfPath}.${preferredPdfBuilder}.pdf`, `${pdfPath}`);
+    success = true;
   } catch (e) {
     console.error(e.stackTrace || e);
   }
