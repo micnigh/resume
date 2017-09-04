@@ -1,6 +1,5 @@
 import * as path from 'path';
-import buildPdf from './scripts/buildPdf';
-
+import buildPdf from './scripts/buildPdf/';
 
 export const createPages = async ({ boundActionCreators, graphql }: any) => {
   const { createPage } = boundActionCreators;
