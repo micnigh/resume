@@ -3,7 +3,8 @@
     "es2017",
     "es2016",
     "es2015",
-    "react"
+    "react",
+    "env"
   ],
   "plugins": [
     "transform-object-rest-spread",

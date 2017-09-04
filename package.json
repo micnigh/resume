@@ -8,12 +8,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build",
-    "build:pdf": "ts-node --fast -r babel-core/register scripts/buildPdf/index.tsx --exec",
-    "develop": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js develop",
+    "build": "ts-node --fast -r babel-core/register -r babel-polyfill node_modules/gatsby/dist/gatsby-cli.js build",
+    "build:pdf": "ts-node --fast -r babel-core/register -r babel-polyfill scripts/buildPdf/index.tsx --exec",
+    "develop": "ts-node --fast -r babel-core/register -r babel-polyfill node_modules/gatsby/dist/gatsby-cli.js develop",
     "serve": "serve public",
-    "deploy": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths && gh-pages -d public",
-    "deploy:ci": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths",
+    "deploy": "ts-node --fast -r babel-core/register -r babel-polyfill node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths && gh-pages -d public",
+    "deploy:ci": "ts-node --fast -r babel-core/register -r babel-polyfill node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths",
     "test": "jest --env=jsdom",
     "test:watch": "jest --watch --env=jsdom"
   },
@@ -34,8 +34,12 @@
     ]
   },
   "dependencies": {
+    "babel-core": "^6.26.0",
     "babel-plugin-styled-components": "^1.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "devicon": "^2.0.0",
