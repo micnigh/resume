@@ -99,7 +99,7 @@ const hasDocker = async () => {
   return true;
 };
 
-export const execHelper = async (cmd: string, printCmd = false) => {
+export const execHelper = async (cmd: string, printCmd = true) => {
   printCmd && console.log(cmd);
   return (await exec(cmd)).stdout.trim();
 };
