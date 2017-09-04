@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build",
-    "build:pdf": "ts-node --fast -r babel-core/register scripts/buildPdf/index.tsx --exec --prefix-paths",
+    "build:pdf": "ts-node --fast -r babel-core/register scripts/buildPdf/index.tsx --exec",
     "develop": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js develop",
     "serve": "serve public",
     "deploy": "ts-node --fast -r babel-core/register node_modules/gatsby/dist/gatsby-cli.js build --prefix-paths && gh-pages -d public",
