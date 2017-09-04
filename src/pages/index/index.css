@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'capture-it';
+  src: url('../fonts/capture-it.eot');
+  src: url('../fonts/capture-it.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/capture-it.woff') format('woff'),
+       url('../fonts/capture-it.ttf') format('truetype'),
+       url('../fonts/capture-it.svg#capture-it') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'special-elite';
+  src: url('../fonts/special-elite.eot');
+  src: url('../fonts/special-elite.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/special-elite.woff') format('woff'),
+       url('../fonts/special-elite.ttf') format('truetype'),
+       url('../fonts/special-elite.svg#special-elite') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tippy-tooltip {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
