@@ -4,9 +4,14 @@ env:
   - GIT_EMAIL: autodeploy@travis-ci.org
   - GH_REF: git@github.com:micnigh/resume.git
 
+sudo: required
+
 language: node_js
 node_js:
   - "node"
+
+services:
+  - docker
 
 addons:
   chrome: stable
