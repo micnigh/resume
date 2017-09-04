@@ -1,7 +1,7 @@
 import { default as styled } from 'styled-components';
 
-import ASvg from '../../../components/aSvg/';
-import H1 from '../../../components/h1/';
+import { Container as ASvg } from '../../../components/aSvg/styles';
+import { h1 } from '../../../components/h/styles';
 
 import * as globalStyles from '../../styles';
 
@@ -17,7 +17,7 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const Title = styled(H1)`
+export const Title = h1.extend`
   text-align: center;
   margin: 0px;
 `;
@@ -30,7 +30,7 @@ export const Email = styled.div`
   line-height: ${globalStyles.font.size * 2}px;
 `;
 
-export const SVGLink = styled(ASvg)`
+export const SVGLink = ASvg.extend`
   margin-left: ${globalStyles.font.size * 2}px;
   line-height: ${iconSize.desktop}px;
   svg {

@@ -1,7 +1,7 @@
 import { default as styled, css } from 'styled-components';
 import * as globalStyles from '../../../../styles';
-import ASvg from '../../../../../components/aSvg/';
-import H from '../../../../../components/h/';
+import { Container as ASvg } from '../../../../../components/aSvg/styles';
+import * as h from '../../../../../components/h/styles';
 import { indent } from '../../../../../components/indent/styles';
 import { marginSizing } from '../../../../../components/h/styles';
 
@@ -14,11 +14,18 @@ export const Container = styled.div`
   page-break-inside: avoid;
 `;
 
-export const Title = styled(H)`
+export const generateTitle = (level: number) => h[`h${level}`].extend`
   margin-top: 0px;
   margin-bottom: 0px;
   order: 1;
 `;
+
+export const Title1 = generateTitle(1);
+export const Title2 = generateTitle(2);
+export const Title3 = generateTitle(3);
+export const Title4 = generateTitle(4);
+export const Title5 = generateTitle(5);
+export const Title6 = generateTitle(6);
 
 export const Date = styled.div`
   order: 3;
@@ -30,7 +37,7 @@ export const LinksAndIcons = styled.div`
   order: 2;
 `;
 
-export const SVGLink = styled(ASvg)`
+export const SVGLink = ASvg.extend`
   margin-left: ${globalStyles.font.size * 2}px;
   line-height: ${iconSize.desktop}px;
   svg {
@@ -72,7 +79,7 @@ export const Header = styled.div`
   @media screen and (max-width: 768px) {
     display: block;
 
-    ${Title} {
+    ${Title1}, ${Title2}, ${Title3}, ${Title4}, ${Title5}, ${Title6} {
       float: left;
     }
     ${Date} {

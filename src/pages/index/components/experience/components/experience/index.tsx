@@ -11,7 +11,8 @@ import { sortExperience } from '../../';
 
 const SVGLinkIcon = require('!svg-react-loader!svg-icon/dist/svg/awesome/chain.svg');
 
-import { Container, Header, Title, Date, SVGLink, LinksAndIcons, Icon, Icons } from './styles';
+import { Container, Header, Date, SVGLink, LinksAndIcons, Icon, Icons } from './styles';
+import * as styles from './styles';
 
 import { Experience as ExperienceType, Project as ProjectType } from '../../../../../../data/experiences/index.types';
 
@@ -30,10 +31,13 @@ export class Experience extends React.Component<{ experience: ExperienceType | P
     return (
       <Container renderProjects={renderProjects} >
         <Header inline={headerInline} >
-          <Title level={headerLevel} >{title}</Title>
+          {(() => {
+            const TitleH = styles[`Title${headerLevel}`];
+            return <TitleH level={headerLevel} >{title}</TitleH>;
+          })()}
           {!renderDate ? null : <Date>{`${formatDate(start)} to ${formatDate(end)}`}</Date>}
           <LinksAndIcons>
-            {portfolio ? <SVGLink href={portfolio.link}><SVGLinkIcon title={portfolio.hoverTitle}/></SVGLink> : null}
+            {portfolio ? <SVGLink target={`_blank`} href={portfolio.link}><SVGLinkIcon title={portfolio.hoverTitle}/></SVGLink> : null}
             {!renderIcons ? null :
             <Icons>
               {icons.map((icon, i) => {

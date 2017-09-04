@@ -8,7 +8,7 @@ import Link from '../link/';
 export const Markdown = ({ children, ...props }: any) => (
   <Container
     renderers={{
-      Link: ({ href, ...linkProps }) => {
+      Link: ({ href, nodeKey, literal, ...linkProps }) => {
         if (/^http/.test(href)) {
           return <A href={href} {...linkProps} />;
         } else {

@@ -14,7 +14,13 @@ export const marginSizing = css`
 export const baseStyle = css`
   font-family: capture-it;
   font-weight: normal;
-  // line-height: 1;
   text-transform: uppercase;
   ${marginSizing}
 `;
+
+export { Container as h1 } from '../h1/styles';
+export { Container as h2 } from '../h2/styles';
+export { Container as h3 } from '../h3/styles';
+export { Container as h4 } from '../h4/styles';
+export { Container as h5 } from '../h5/styles';
+export { Container as h6 } from '../h6/styles';

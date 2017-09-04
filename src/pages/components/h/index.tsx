@@ -7,6 +7,13 @@ import H4 from '../h4/';
 import H5 from '../h5/';
 import H6 from '../h6/';
 
+export { H1 } from '../h1/';
+export { H2 } from '../h2/';
+export { H3 } from '../h3/';
+export { H4 } from '../h4/';
+export { H5 } from '../h5/';
+export { H6 } from '../h6/';
+
 export const H = ({ level, ...props }: any) => {
   switch (level) {
     case(1): return <H1 {...props} />;

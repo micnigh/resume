@@ -13,11 +13,13 @@ export class Header extends React.Component {
         <Email><A href={`mailto:contact@mnigh.com`}>contact@mnigh.com</A></Email>
         <SocialNetworkLinks>
           <SVGLink
+            target={`_blank`}
             href={`https://github.com/micnigh/`}
           >
             <SVGGithub title={`Check out my github`} data-position={`bottom`}/>
           </SVGLink>
           <SVGLink
+            target={`_blank`}
             href={`https://www.linkedin.com/in/michaelnigh`}
           >
             <SVGLinkedin title={`Visit my LinkedIn`} data-position={`bottom`}/>

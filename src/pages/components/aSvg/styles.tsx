@@ -1,8 +1,8 @@
 import { default as styled } from 'styled-components';
 import * as globalStyles from '../../index/styles';
-import A from '../a/';
+import { Container as A } from '../a/styles';
 
-export const Container = styled(A)`
+export const Container = A.extend`
   margin-left: ${globalStyles.font.size * 2}px;
   line-height: ${globalStyles.font.size * 2}px;
   svg {
