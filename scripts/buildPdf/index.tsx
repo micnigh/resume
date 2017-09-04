@@ -8,6 +8,7 @@ import * as util from 'util';
 import * as express from 'express';
 import * as puppeteer from 'puppeteer';
 import * as _mkdirp from 'mkdirp';
+import gatsbyConfig from '../../gatsby-config';
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -21,8 +22,20 @@ const margin = 0.4; /** inches */
 const port = 5000;
 const pdfPath = `public/download/Michael-Nigh.pdf`;
 
+const { prefixPaths } = argv;
+const { pathPrefix } = gatsbyConfig;
+const baseUrl = `${prefixPaths ? `${pathPrefix}/` : `/`}`;
+
 export const run = async () => {
   let success = false;
+
+  console.log(`Building PDF`);
+
+  if (prefixPaths) {
+    console.log(`prefixPaths set - adjusting baseUrl to ${baseUrl}`);
+  } else {
+    console.log(`prefixPaths not set - adjusting baseUrl to ${baseUrl}`);
+  }
   
   try {
     await mkdirp(`public/download/`);
@@ -39,7 +52,7 @@ export const run = async () => {
     console.error(e.stackTrace || e);
   }
 
-  console.log(success ? `Sucessfully generated pdf ${pdfPath}` : `Failed to generate pdf`);
+  console.log(success ? `Sucessfully built pdf ${pdfPath}` : `Failed to build pdf`);
 
   return success;
 };
@@ -52,7 +65,7 @@ export const buildPDFPuppeteer = async () => {
   let completed = false;
 
   const app = express();
-  app.use(`/`, express.static(`public`));
+  app.use(`${baseUrl}`, express.static(`public`));
   const server = await new Promise<http.Server>(resolve => {
     const newServer = app.listen(port, `0.0.0.0`, () => resolve(newServer));
   });
@@ -62,7 +75,7 @@ export const buildPDFPuppeteer = async () => {
   const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
   try {
     const page = await browser.newPage();
-    await page.goto(`http://127.0.0.1:${port}/`, {
+    await page.goto(`http://127.0.0.1:${port}${baseUrl}`, {
       waitUntil: 'networkidle',
       networkIdleTimeout: delayAfterNavigation,
     });
@@ -119,10 +132,10 @@ export const buildPDFAthena = async () => {
   try {
     const pwd = (await execHelper(`pwd`, false));
     networkId = (await execHelper(`docker network create resume-pdf-generator`));
-    nginxId = (await execHelper(`docker run -d -v /${pwd}/public/:/usr/share/nginx/html/ nginx`));
+    nginxId = (await execHelper(`docker run -d -v /${pwd}/public/:/usr/share/nginx/html${baseUrl} nginx`));
     await execHelper(`docker network connect --alias web ${networkId} ${nginxId}`);
     await sleep(delayAfterServer);
-    await execHelper(`docker run --rm --network ${networkId} --security-opt seccomp:unconfined -v /${pwd}/public/download/:/converted/ arachnysdocker/athenapdf athenapdf --delay ${delayAfterNavigation} http://web/ ${path.basename(pdfPath)}.athena.pdf`);
+    await execHelper(`docker run --rm --network ${networkId} --security-opt seccomp:unconfined -v /${pwd}/public/download/:/converted/ arachnysdocker/athenapdf athenapdf --delay ${delayAfterNavigation} http://web${baseUrl} ${path.basename(pdfPath)}.athena.pdf`);
 
     completed = true;    
   } catch (e) {
