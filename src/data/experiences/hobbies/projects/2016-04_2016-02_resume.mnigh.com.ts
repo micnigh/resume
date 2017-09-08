@@ -35,7 +35,7 @@ export let icons = [
 ];
 
 export let portfolio = {
-  link: `https://github.com/micnigh/resume/`,
+  link: `https://github.com/micnigh/resume-2016/`,
   hoverTitle: `View public git repo`,
 };
 
