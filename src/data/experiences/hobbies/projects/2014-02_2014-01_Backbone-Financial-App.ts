@@ -9,7 +9,7 @@ export let end = `2014-02`;
 export let duration = moment.duration(moment(end).endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-Development spike to experiment with Backbone after a few books and [backbonerails.com](backbonerails.com) screencast.  Built in NodeJs with seperate Grunt tasks for retrieving data, serving a REST API, and rendering.  Did not pursue due to high licensing cost of financial data.
+Development spike to experiment with Backbone after a few books and [backbonerails.com](http://backbonerails.com) screencast.  Built in NodeJs with seperate Grunt tasks for retrieving data, serving a REST API, and rendering.  Did not pursue due to high licensing cost of financial data.
 `;
 
 export let tags = createTags(duration, [
