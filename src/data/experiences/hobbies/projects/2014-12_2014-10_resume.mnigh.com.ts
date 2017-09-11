@@ -4,8 +4,8 @@ import { createProject, createTags } from '../../';
 
 export let title = `resume.mnigh.com`;
 
-export let start = `2014-12`;
-export let end = `2014-11`;
+export let start = `2014-11`;
+export let end = `2014-12`;
 export let duration = moment.duration(moment(end).endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
