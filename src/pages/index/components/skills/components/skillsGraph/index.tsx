@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as moment from 'moment';
+import moment from 'moment';
 import { throttle } from 'lodash';
 
 import { Container, Content, Guidelines, Guideline, GuidelineLabel, GuidelineLine, Graph, GraphBar, GraphBarTitle } from './styles';

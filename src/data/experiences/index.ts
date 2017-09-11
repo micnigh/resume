@@ -1,11 +1,11 @@
 import { NormalizedExperience, NormalizedProject, Tag } from './index.types';
 import { merge } from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as uuid from 'uuid';
 import tagIconMap from './tags/icons';
 import tagShorthandMap from './tags/shorthand';
 
-import * as marked from 'marked';
+import marked from 'marked';
 export const renderer = new marked.Renderer();
 renderer.link = ( href, title, text ) => {
   return `<a target='_blank' href='${ href }' title='${title || ''}' >${ text }</a>`;

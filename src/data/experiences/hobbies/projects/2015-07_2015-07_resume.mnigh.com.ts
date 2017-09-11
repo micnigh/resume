@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import moment from 'moment';
 import { NormalizedProject } from '../../index.types';
 import { createProject, createTags } from '../../';
 

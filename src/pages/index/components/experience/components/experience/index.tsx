@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as moment from 'moment';
+import moment from 'moment';
 import { find } from 'lodash';
 import H from '../../../../../components/h/';
 import Indent from '../../../../../components/indent/';

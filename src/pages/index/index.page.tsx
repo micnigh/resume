@@ -3,7 +3,7 @@ import A from '../components/a/';
 import Link from '../components/link/';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import * as moment from 'moment';
+import moment from 'moment';
 
 import { Container } from './styles';
 import Header from './components/header/';

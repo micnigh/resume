@@ -15,7 +15,7 @@ export const baseStyle = css`
   font-family: capture-it;
   font-weight: normal;
   text-transform: uppercase;
-  ${marginSizing}
+  ${p => marginSizing}
 `;
 
 export { Container as h1 } from '../h1/styles';

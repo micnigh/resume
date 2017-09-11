@@ -4,7 +4,7 @@ import * as globalStyles from '../../index/styles';
 import { baseStyle } from '../h/styles';
 
 export const Container = styled.h1`
-  ${baseStyle}
+  ${p => baseStyle}
   font-size: ${globalStyles.font.size * 4}px;
   line-height: ${globalStyles.font.size * 4}px;
 `;
