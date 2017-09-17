@@ -38,6 +38,19 @@ export const modifyBabelrc = ({ babelrc }: any, { plugins, ...options }: any) =>
 };
 
 export const modifyWebpackConfig = ({ config, stage }: any) => {
+  
+  // modify ts-loader to compile typescript modules as `esnext`
+  // enables styled-components to work with babel to provide better debug and ssr support
+  // https://github.com/styled-components/babel-plugin-styled-components/issues/41#issuecomment-310201410
+  config.loader(`typescript`, (loaderConfig: any) => {
+    const tsLoaderIndex = loaderConfig.loaders.findIndex((l: string) => /^ts-loader/.test(l));
+    const tsLoader = loaderConfig.loaders[tsLoaderIndex];
+    let tsOpts = JSON.parse(tsLoader.split('?')[1]);
+    tsOpts.compilerOptions.module = 'esnext';
+    loaderConfig.loaders[tsLoaderIndex] = ['ts-loader', JSON.stringify(tsOpts)].join('?');
+    return loaderConfig;
+  });
+  
   return config;
 };
 
