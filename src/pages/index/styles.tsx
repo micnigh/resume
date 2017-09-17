@@ -1,7 +1,4 @@
-import { default as styled, injectGlobal, css } from 'styled-components';
-import 'normalize.css';
-import 'tippy.js/dist/tippy.css';
-import './index.css';
+import { default as styled, css } from 'styled-components';
 
 export const color = {
   text: `#333`,
@@ -29,8 +26,4 @@ export const Container = styled.div`
   @media screen and (min-width: 960px) {
     max-width: 900px;
   }
-`;
-
-injectGlobal`
-
 `;
