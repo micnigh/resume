@@ -25,7 +25,7 @@ export class TemplateWrapper extends React.Component<any, any> {
           families: ['special-elite', 'capture-it'],
         },
         active: () => {
-          console.log("fonts loaded");
+
         }
       });
     }
