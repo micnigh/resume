@@ -30,7 +30,7 @@ npm run deploy
 
 # Stack
 
-Uses [gatsby] to generate a static site of my resume.
+Uses [gatsby] to generate a static site resume.
 
 Based on the template at [micnigh/gatsby-starter-kit]
 
@@ -43,14 +43,13 @@ Features
 
 # TODO
 
- - Find solution for babel-plugin-styled-components when typescript issues are resolved - [see](https://github.com/styled-components/babel-plugin-styled-components/issues/41#issuecomment-310201410)
+ - Cleanup how data is loaded by switching to graphql queries provided via gatsby; currently inneficiently bundled in webpack bundle.
 
 
 
 [node]: http://nodejs.org/en/
 [docker]: http://www.docker.com/
 [puppeteer]: http://github.com/GoogleChrome/puppeteer
-[athenapdf]: http://www.athenapdf.com/
 [gatsby]: http://gatsbyjs.org
 [styled-components]: http://styled-components.com
 [typescript]: http://typescriptlang.org
