@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'capture-it';
-  src: url(~!url-loader?limit=500000!../fonts/capture-it.woff) format('woff');
+  src: url(~!url-loader?limit=500000!./fonts/capture-it.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'special-elite';
-  src: url(~!url-loader?limit=500000!../fonts/special-elite.woff) format('woff');
+  src: url(~!url-loader?limit=500000!./fonts/special-elite.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }
