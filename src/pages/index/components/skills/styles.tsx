@@ -1,5 +1,6 @@
 import { default as styled } from 'styled-components';
+import { Section } from '../../styles';
 
-export const Container = styled.div`
+export const Container = Section.extend`
   page-break-after: always;
 `;

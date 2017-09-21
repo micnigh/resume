@@ -1,4 +1,5 @@
 import { default as styled } from 'styled-components';
+import { Section } from '../../styles';
 
 import { Container as ASvg } from '../../../components/aSvg/styles';
 import { h1 } from '../../../components/h/styles';
@@ -12,7 +13,7 @@ const iconSize = {
 
 const paddingVert = globalStyles.font.size * 1;
 
-export const Container = styled.div`
+export const Container = Section.extend`
   margin-top: ${globalStyles.font.size * 3}px;
   position: relative;
 `;

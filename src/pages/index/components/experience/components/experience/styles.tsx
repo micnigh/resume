@@ -12,6 +12,9 @@ const iconSize = {
 
 export const Container = styled.div`
   page-break-inside: avoid;
+  margin-top: ${globalStyles.font.size * 4}px;
+
+  ${p => p.inline && css`margin-top: ${globalStyles.font.size * 2}px;`}
 `;
 
 export const generateTitle = (level: number) => h[`h${level}`].extend`
@@ -122,4 +125,6 @@ export const Header = styled.div`
   }
 `;
 
-
+export const Projects = styled.div`
+  margin-top: ${globalStyles.font.size * 2}px;
+`;

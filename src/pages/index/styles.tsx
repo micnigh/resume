@@ -27,3 +27,7 @@ export const Container = styled.div`
     max-width: 900px;
   }
 `;
+
+export const Section = styled.div`
+  margin-bottom: ${font.size * 4}px;
+`;

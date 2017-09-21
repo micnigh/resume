@@ -11,7 +11,7 @@ import { sortExperience } from '../../';
 
 const SVGLinkIcon = require('!svg-react-loader!svg-icon/dist/svg/awesome/chain.svg');
 
-import { Container, Header, Date, SVGLink, LinksAndIcons, Icon, Icons } from './styles';
+import { Container, Header, Date, SVGLink, LinksAndIcons, Icon, Icons, Projects } from './styles';
 import * as styles from './styles';
 
 import { Experience as ExperienceType, Project as ProjectType } from '../../../../../../data/experiences/index.types';
@@ -29,8 +29,8 @@ export class Experience extends React.Component<{ experience: ExperienceType | P
     const headerLevel = level ? level : 3;
     const headerInline = headerLevel > 3;
     return (
-      <Container renderProjects={renderProjects} >
-        <Header inline={headerInline} >
+      <Container renderProjects={renderProjects} inline={headerInline} >
+        <Header>
           {(() => {
             const TitleH = styles[`Title${headerLevel}`];
             return <TitleH level={headerLevel} >{title}</TitleH>;
@@ -53,12 +53,12 @@ export class Experience extends React.Component<{ experience: ExperienceType | P
         <Indent>
           <Markdown source={summaryMarkdown}/>
           {!renderProjects ? null :
-            <div>
+            <Projects>
               <H level={headerLevel} inline >PROJECTS</H>
               {projects.sort(sortExperience).map((project: ProjectType, i: number) => (
                 <Experience experience={project} level={headerLevel + 1} key={i} />
               ))}
-            </div>
+            </Projects>
           }
         </Indent>
       </Container>
