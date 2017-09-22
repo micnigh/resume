@@ -1,4 +1,12 @@
-const reducer = (state = {}, action: any) => {
+const reducer = (
+  state = {
+    entities: {
+      tags: {},
+      experiences: {},
+      projects: {},
+    },
+  },
+  action: any) => {
   return state;
 };
 
