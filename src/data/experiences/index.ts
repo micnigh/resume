@@ -1,12 +1,13 @@
 import { NormalizedExperience, NormalizedProject, Tag } from './index.types';
 import { merge } from 'lodash';
-import moment from 'moment';
+import * as MomentTS from 'moment'; import MomentBabel from 'moment'; const moment = typeof MomentTS === 'function' ? MomentTS : MomentBabel; // moment import uses export = {} syntax - which works differently in typescript and babel, so we load both and pick the one that worked :'(
 import * as uuid from 'uuid';
 import tagIconMap from './tags/icons';
 import tagShorthandMap from './tags/shorthand';
 
-import marked from 'marked';
-export const renderer = new marked.Renderer();
+const marked = require('marked');
+const renderer = new marked.Renderer();
+
 renderer.link = ( href, title, text ) => {
   return `<a target='_blank' href='${ href }' title='${title || ''}' >${ text }</a>`;
 };
