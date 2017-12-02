@@ -3,7 +3,7 @@ import * as MomentTS from 'moment'; import MomentBabel from 'moment'; const mome
 import { NormalizedExperience } from '../index.types';
 import { createExperience, createTags } from '../';
 
-export let title = `duovu.com - Duovu Inc`;
+export let title = `Web Developer - Duovu Inc`;
 
 export let start = `2005-01`;
 export let end = `2007-01`;
