@@ -89,6 +89,7 @@ let experiencesAsArray: NormalizedExperience[] = [
   require('./2012-08_2012-04_Technical-Lead_Sutisoft/').default,
   require('./2014-10_2010-09_Freelance-web-dev/').default,
   require('./2016-02_Sr-Web-Developer-GDIT/').default,
+  require('./2018-02_Sr-Web-Developer-Home-Depot/').default,
   require('./hobbies/').default,
 ];
 

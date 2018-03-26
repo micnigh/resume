@@ -16,13 +16,13 @@ export let endDeveloper = `2016-01`;
 export let durationDeveloper = moment.duration(moment(endDeveloper).diff(moment(startDeveloper))).toJSON();
 
 export let startSeniorDeveloper = `2016-02`;
-export let endSeniorDeveloper = ``;
+export let endSeniorDeveloper = `2018-02`;
 export let durationSeniorDeveloper = moment.duration(moment().diff(moment(startSeniorDeveloper))).toJSON();
 
 export let summaryMarkdown = `
-**Senior Web Developer**  2016-02 to Present
+**Senior Web Developer**  ${startSeniorDeveloper} to ${endSeniorDeveloper}
 
-**Web Developer**  2015-02 to 2016-01
+**Web Developer**  ${startDeveloper} to ${endDeveloper}
 
 Build and maintain CED3 web applications to enhance course development and delivery at the Naval Postgraduate School in Monterey.
 
