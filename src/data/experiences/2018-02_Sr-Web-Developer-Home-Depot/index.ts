@@ -2,13 +2,15 @@ import * as MomentTS from 'moment'; import MomentBabel from 'moment'; const mome
 import { NormalizedExperience } from '../index.types';
 import { createExperience, createTags } from '../';
 
-export let title = `Senior Web Developer - Home Depot - Visionaire`;
+export let title = `Senior Web Developer - Home Depot`;
 
 export let start = `2018-02`;
 export let end = ``;
 export let duration = moment.duration(moment(end).endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
+**Contractor through Visionaire**
+
 In a small team, develop and release new versions of internal applications used throughout the organization.  Examples include the [Homer Fund Charity](https://www.thdhomerfund.org/) app as well as budgeting tools.
 
 Backends built using a variety of frameworks, including Python Flask, Spring Boot, and NodeJS Express with apis in GraphQL or REST.
