@@ -9,7 +9,6 @@ export const Markdown = ({ children, ...props }: any) => (
   <Container
     renderers={{
       link: ({ href, nodeKey, literal, ...linkProps }) => {
-        console.log(`TESTING LINK`, href)
         if (/^http/.test(href)) {
           return <A href={href} {...linkProps} />;
         } else {
