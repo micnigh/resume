@@ -2,14 +2,14 @@ import { argv } from 'yargs';
 import * as path from 'path';
 import * as http from 'http';
 import * as util from 'util';
-import * as express from 'express';
-import * as puppeteer from 'puppeteer';
-import * as _mkdirp from 'mkdirp';
-import gatsbyConfig from '../../gatsby-config';
+import express from 'express';
+import puppeteer from 'puppeteer';
+import _mkdirp from 'mkdirp';
+let gatsbyConfig = require('../../gatsby-config');
 
 const mkdirp = util.promisify(_mkdirp);
 
-const networkIdleTimeout = 100;
+const timeout = 100 * 100 /* ms */;
 
 const margin = 0.4; /** inches */
 const pdfPath = `public/download/Michael-Nigh.pdf`;
@@ -61,8 +61,8 @@ export const buildPDFPuppeteer = async () => {
   try {
     const page = await browser.newPage();
     await page.goto(`http://127.0.0.1:${port}${baseUrl}`, {
-      waitUntil: 'networkidle',
-      networkIdleTimeout,
+      waitUntil: 'networkidle2',
+      timeout,
     });
     // wait for first render - may be necessary for web fonts to load
     // https://github.com/GoogleChrome/puppeteer/issues/422

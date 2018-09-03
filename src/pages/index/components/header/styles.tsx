@@ -13,12 +13,12 @@ const iconSize = {
 
 const paddingVert = globalStyles.font.size * 1;
 
-export const Container = Section.extend`
+export const Container = styled(Section)`
   margin-top: ${globalStyles.font.size * 3}px;
   position: relative;
 `;
 
-export const Title = h1.extend`
+export const Title = styled(h1)`
   text-align: center;
   margin: 0px;
 `;
@@ -31,7 +31,7 @@ export const Email = styled.div`
   line-height: ${globalStyles.font.size * 2}px;
 `;
 
-export const SVGLink = ASvg.extend`
+export const SVGLink = styled(ASvg)`
   margin-left: ${globalStyles.font.size * 2}px;
   line-height: ${iconSize.desktop}px;
   svg {

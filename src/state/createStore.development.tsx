@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import * as Redux from 'redux';
-let promise: Redux.Middleware = require('redux-promise');
+import promise from 'redux-promise';
 import { createLogger } from 'redux-logger';
-let thunk = require('redux-thunk').default;
+import thunk from 'redux-thunk';
 
 import rootReducer from '../reducers/';
 
@@ -12,7 +12,7 @@ let configureStore = (initialState: any) => {
     initialState,
     compose(
       applyMiddleware(thunk, promise, createLogger()),
-      typeof window !== 'undefined' && window.devToolsExtension ? window.devToolsExtension() : f => f
+      typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
     )
   );
 

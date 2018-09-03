@@ -16,10 +16,10 @@ cache:
     - node_modules
 
 install:
-  - npm install
+  - yarn install
 
 script:
-  - npm run deploy:ci
+  - yarn run deploy:ci
 
 deploy:
   provider: pages

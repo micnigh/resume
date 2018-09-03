@@ -6,25 +6,26 @@
 
 # Requirements/Recommended
 
- - [node] `v8+`
+ - [node] `v10+`
+ - [yarn]
 
 # Quick start
 
 ```bash
 # first time
-npm install
+yarn install
 
 # start a dev server
-npm run develop
+yarn run develop
 
 # build static site
-npm run build
+yarn run build
 
 # run tests and watch
-npm run test:watch
+yarn run test:watch
 
 # run deploy script
-npm run deploy
+yarn run deploy
 
 ```
 
@@ -57,3 +58,4 @@ Features
 [jest]: http://facebook.github.io/jest
 [gatsby-start-default]: http://github.com/gatsbyjs/gatsby-starter-default
 [micnigh/gatsby-starter-kit]: https://github.com/micnigh/gatsby-starter-kit
+[yarn]: https://yarnpkg.com

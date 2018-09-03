@@ -4,6 +4,6 @@ import { Container as A } from '../a/styles';
 
 const color = `#33f`;
 
-export const Container = A.withComponent(Link).extend`
+export const Container = styled(A.withComponent(Link))`
   
 `;

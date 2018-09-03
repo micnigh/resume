@@ -1,21 +1,23 @@
 import * as React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { merge } from 'lodash';
+import Layout from './src/layouts/';
 
 import createStore from './src/state/createStore';
 
 import data from './src/data/';
 
-exports.replaceRouterComponent = ({ history }: any) => {
+export const wrapPageElement = ({ element, props }) => {
   const initialState =  merge({}, data);
   const store = createStore(initialState);
 
-  const ConnectedRouterWrapper = ({ children }: any) => (
+  const ConnectedRootElement = (
     <Provider store={store}>
-      <Router history={history}>{children}</Router>
+      <Layout {...props}>
+        {element}
+      </Layout>
     </Provider>
   );
 
-  return ConnectedRouterWrapper;
+  return ConnectedRootElement;
 };

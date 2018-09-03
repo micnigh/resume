@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import * as Redux from 'redux';
-let thunk = require('redux-thunk').default;
-let promise: Redux.Middleware = require('redux-promise');
+import thunk from 'redux-thunk';
+import promise from 'redux-promise';
 
 import rootReducer from '../reducers/';
 

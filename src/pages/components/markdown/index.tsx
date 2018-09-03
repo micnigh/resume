@@ -8,14 +8,15 @@ import Link from '../link/';
 export const Markdown = ({ children, ...props }: any) => (
   <Container
     renderers={{
-      Link: ({ href, nodeKey, literal, ...linkProps }) => {
+      link: ({ href, nodeKey, literal, ...linkProps }) => {
+        console.log(`TESTING LINK`, href)
         if (/^http/.test(href)) {
           return <A href={href} {...linkProps} />;
         } else {
           return <Link to={href} {...linkProps} />;
         }
       },
-      Heading: H,
+      heading: H,
       paragraph: P,
     }}
     {...props}

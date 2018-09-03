@@ -4,6 +4,6 @@ import { Container as ASvg } from '../aSvg/styles';
 
 const color = `#33f`;
 
-export const Container = ASvg.withComponent(Link).extend`
+export const Container = styled(ASvg.withComponent(Link))`
   
 `;

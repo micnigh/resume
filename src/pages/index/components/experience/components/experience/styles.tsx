@@ -17,7 +17,7 @@ export const Container = styled.div`
   ${p => p.inline && css`margin-top: ${globalStyles.font.size * 2}px;`}
 `;
 
-export const generateTitle = (level: number) => h[`h${level}`].extend`
+export const generateTitle = (level: number) => styled(h[`h${level}`])`
   margin-top: 0px;
   margin-bottom: 0px;
   order: 1;
@@ -40,7 +40,7 @@ export const LinksAndIcons = styled.div`
   order: 2;
 `;
 
-export const SVGLink = ASvg.extend`
+export const SVGLink = styled(ASvg)`
   margin-left: ${globalStyles.font.size * 2}px;
   line-height: ${iconSize.desktop}px;
   svg {
