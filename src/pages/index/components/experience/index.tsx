@@ -16,6 +16,8 @@ export const sortExperience = (a: ExperienceType | ProjectType, b: ExperienceTyp
   } else {
     if (!b.start && !b.end) {
       return -1;
+    } else if (!a.start && !a.end) {
+      return 1;
     }
     return !b.end ? 1 : -1;
   }
