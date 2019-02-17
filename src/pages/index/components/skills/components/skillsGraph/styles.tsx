@@ -43,7 +43,7 @@ export const GuidelineLabel = styled.div`
   `}
 
   ${p => p.plural && css`
-  margin-left: -10px;
+  margin-left: -4px;
   `}
 
   @media print {
