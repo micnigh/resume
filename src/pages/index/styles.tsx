@@ -22,6 +22,8 @@ export const Container = styled.div`
   max-width: 760px;
   margin: 0px auto;
   color: ${color.text};
+  padding-left: ${font.size * 1}px;
+  padding-right: ${font.size * 1}px;
 
   @media screen and (min-width: 960px) {
     max-width: 900px;
