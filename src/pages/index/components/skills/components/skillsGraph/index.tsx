@@ -129,13 +129,13 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
               return (
                 <Guideline style={{ left: `${percentageX}%`}} key={y}>
                   {y === 1 ?
-                    <GuidelineLabel top singular >{`${y} year`}</GuidelineLabel> :
-                    <GuidelineLabel top plural >{`${y} years`}</GuidelineLabel>
+                    <GuidelineLabel top singular >{`${y} Year`}</GuidelineLabel> :
+                    <GuidelineLabel top plural >{`${y}Y`}</GuidelineLabel>
                   }
                   <GuidelineLine/>
                   { y === 1 ?
-                    <GuidelineLabel bottom singular >{`${y} year`}</GuidelineLabel> :
-                    <GuidelineLabel bottom plural >{`${y} years`}</GuidelineLabel>
+                    <GuidelineLabel bottom singular >{`${y} Year`}</GuidelineLabel> :
+                    <GuidelineLabel bottom plural >{`${y}Y`}</GuidelineLabel>
                   }
                 </Guideline>
               );

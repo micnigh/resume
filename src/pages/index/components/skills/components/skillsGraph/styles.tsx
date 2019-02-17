@@ -29,7 +29,6 @@ export const GuidelineLabel = styled.div`
   color: #888;
   font-size: ${globalStyles.font.size * 1.5}px;
   line-height: ${globalStyles.font.size * 1.5}px;
-  font-family: capture-it;
 
   ${p => p.top && css`
   top: -${globalStyles.font.size * 1.5 + 4}px;
@@ -44,7 +43,7 @@ export const GuidelineLabel = styled.div`
   `}
 
   ${p => p.plural && css`
-  margin-left: -32.4px;
+  margin-left: -10px;
   `}
 
   @media print {
