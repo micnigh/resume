@@ -25,5 +25,7 @@ export default {
   Git: 'g',
   Typescript: 'ts',
   React: 'r',
-  Redux: 'r'
+  Redux: 'r',
+  Webpack: 'w',
+  Python: 'p',
 };

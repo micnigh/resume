@@ -24,4 +24,6 @@ export default {
   Linux: 'images/icons/linux/linux-original.svg',
   Git: 'images/icons/git/git-original.svg',
   React: 'images/icons/react/react-original.svg',
+  Webpack: 'images/icons/webpack/webpack-original.svg',
+  Python: 'images/icons/python/python-original.svg',
 };

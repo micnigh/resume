@@ -1,5 +1,5 @@
 import * as MomentTS from 'moment'; import MomentBabel from 'moment'; const moment = typeof MomentTS === 'function' ? MomentTS : MomentBabel; // moment import uses export = {} syntax - which works differently in typescript and babel, so we load both and pick the one that worked :'(
-import { NormalizedExperience } from '../index.types';
+import { NormalizedExperience, NormalizedProject } from '../index.types';
 import { createExperience, createTags } from '../';
 
 export let title = `Senior Web Developer - Home Depot`;
@@ -9,44 +9,44 @@ export let end = ``;
 export let duration = moment.duration(moment().endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-**Contractor through Visionaire**
+**Contracted through Visionaire**
 
-In a small team, develop and release new versions of internal applications used throughout the organization.  Examples include the [Homer Fund Charity](https://www.thdhomerfund.org/) app as well as budgeting tools.
-
-Backends built using a variety of frameworks, including Python Flask, Spring Boot, and NodeJS Express with apis in GraphQL or REST.
-
-Frontends written in React with Redux or Angular.
-
-Deployments with the [twelve-factor](http://12factor.net/) approach on [pivotal cloud foundry](https://pivotal.io/platform) and [google cloud platforms](https://cloud.google.com).
+Develop internal applications and support homedepot.com content creation using a variety of modern and legacy tools for front and backend.
 
 `;
 
 export let tags = createTags(duration, [
-  `NodeJS`,
-  `Webpack`,
-  `Git`,
-  `Docker`,
-  `Sass`,
-  `JQuery`,
-  `React`,
-  `Redux`,
-  `Java`,
-  `HTML`,
-  `CSS`,
-  `Gulp`,
-  `PostgreSQL`,
-  `GraphQL`,
-  `ExpressJS`,
-  `Python`,
+  // `Typescript`,
+  // `NodeJS`,
+  // `Webpack`,
+  // `Git`,
+  // `Docker`,
+  // `Sass`,
+  // `JQuery`,
+  // `React`,
+  // `Redux`,
+  // `Java`,
+  // `HTML`,
+  // `CSS`,
+  // `Gulp`,
+  // `PostgreSQL`,
+  // `GraphQL`,
+  // `ExpressJS`,
+  // `Python`,
 ]);
 
 export let icons = [
-  `NodeJS`,
-  `Java`,
-  `React`,
+  // `NodeJS`,
+  // `Java`,
+  // `React`,
 ];
 
-export let projects = [];
+export let projects = ([
+  require('./projects/article-render').default,
+  require('./projects/account-creation').default,
+  require('./projects/forecast-tool').default,
+  require('./projects/homer-fund').default,
+] as NormalizedProject[]).map(p => p.id) as string[];
 
 export let experience: NormalizedExperience = createExperience({
   title,
