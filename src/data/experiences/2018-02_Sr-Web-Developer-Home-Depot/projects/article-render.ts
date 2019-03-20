@@ -11,13 +11,18 @@ export let end = ``;
 export let duration = moment.duration(moment().endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-Create front end templates/js/css to support shift to new internal CMS for publishing article content on homedepot.com with current SEO standards.
 
-Started with simple mustache templates and vanilla ES5 and Sass.
+Work with product owners to optimize SEO for article content.
 
-Expanded tooling to include a development server, webpack asset bundling, typescript, jest unit tests, and jest integration tests using image snapshot differential.
+Analyze SEO impact of React with THD architects, especially usage as an SPA, element replacement, and SSR.
 
-Assets are then built and published to an internal NPM artifactory to be consumed by content render services.
+Created automated tests to audit existing article content.
+
+Implemented image snapshot differential testing for specific page components at various states.
+
+Worked with Content team to improve content testing.  Added new front end libraries and assets for articles pages without impacting global bundle size.
+
+Developed strategies for bundling front end assets of Content team in preperation for NextGen features.
 
 `;
 
