@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "build": "babel-node --extensions '.js,.jsx,.ts,.tsx' node_modules/gatsby/dist/bin/gatsby.js  build",
-    "build:pdf": "babel-node --extensions '.js,.jsx,.ts,.tsx' scripts/buildPdf/index.tsx --exec",
+    "build:pdf": "babel-node --extensions '.js,.jsx,.ts,.tsx' scripts/buildPdf/index.ts --exec",
     "develop": "babel-node --extensions '.js,.jsx,.ts,.tsx' node_modules/gatsby/dist/bin/gatsby.js develop",
     "serve": "serve public",
     "deploy": "babel-node --extensions '.js,.jsx,.ts,.tsx' node_modules/gatsby/dist/bin/gatsby.js build --prefix-paths && gh-pages -d public",
