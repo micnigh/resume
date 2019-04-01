@@ -21,8 +21,6 @@ Implement image snapshot differential testing for components at various states.
 
 Work with multiple teams to improve content testing.
 
-Add new libraries and assets without impacting global bundle size.
-
 Develop strategies for NextGen features.
 
 `;
