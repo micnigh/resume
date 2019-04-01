@@ -7,22 +7,23 @@ import { tags as parentTags } from '../';
 export let title = `Article Render Squad`;
 
 export let start = `2018-10`;
-export let end = ``;
+export let end = `2019-03`;
 export let duration = moment.duration(moment().endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-
-Work with product owners to optimize SEO for article content.
+Work with product owners to optimize SEO and create new article content as lead front end engineer.
 
 Analyze SEO impact of React with THD architects, especially usage as an SPA, element replacement, and SSR.
 
-Created automated tests to audit existing article content.
+Create automated tests to audit content.
 
-Implemented image snapshot differential testing for specific page components at various states.
+Implement image snapshot differential testing for components at various states.
 
-Worked with Content team to improve content testing.  Added new front end libraries and assets for articles pages without impacting global bundle size.
+Work with multiple teams to improve content testing.
 
-Developed strategies for bundling front end assets of Content team in preperation for NextGen features.
+Add new libraries and assets without impacting global bundle size.
+
+Develop strategies for NextGen features.
 
 `;
 

@@ -5,7 +5,7 @@ import { createExperience, createTags } from '../';
 export let title = `Senior Web Developer - Home Depot`;
 
 export let start = `2018-02`;
-export let end = ``;
+export let end = `2019-03`;
 export let duration = moment.duration(moment().endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
@@ -16,29 +16,11 @@ Develop internal applications and support homedepot.com content creation using a
 `;
 
 export let tags = createTags(duration, [
-  // `Typescript`,
-  // `NodeJS`,
-  // `Webpack`,
-  // `Git`,
-  // `Docker`,
-  // `Sass`,
-  // `JQuery`,
-  // `React`,
-  // `Redux`,
-  // `Java`,
-  // `HTML`,
-  // `CSS`,
-  // `Gulp`,
-  // `PostgreSQL`,
-  // `GraphQL`,
-  // `ExpressJS`,
-  // `Python`,
+
 ]);
 
 export let icons = [
-  // `NodeJS`,
-  // `Java`,
-  // `React`,
+
 ];
 
 export let projects = ([
