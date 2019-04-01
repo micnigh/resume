@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 export let title = `Senior Web Developer - NPS CED3 - GDIT`;
 
-export let start = `2016-02`;
+export let start = `2015-02`;
 export let end = `2018-02`;
 
 export let duration = moment.duration(moment().diff(moment(start))).toJSON();
