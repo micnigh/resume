@@ -37,7 +37,7 @@ export class Experience extends React.Component<{ experience: ExperienceType | P
           })()}
           {!renderDate ? null : <Date>{`${formatDate(start)} to ${formatDate(end)}`}</Date>}
           <LinksAndIcons>
-            {portfolio ? <SVGLink target={`_blank`} href={portfolio.link}><SVGLinkIcon title={portfolio.hoverTitle}/></SVGLink> : null}
+            {portfolio ? <SVGLink target={`_blank`} href={portfolio.link} rel={`nofollow`}><SVGLinkIcon title={portfolio.hoverTitle}/></SVGLink> : null}
             {!renderIcons ? null :
             <Icons>
               {icons.map((icon, i) => {
