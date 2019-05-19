@@ -40,10 +40,6 @@ export let icons = [
   `Wordpress`,
 ];
 
-export let portfolio = {
-  link: `https://micnigh.github.io/drbacal.com/`,
-};
-
 export let project: NormalizedProject = createProject({
   title,
   start,
@@ -52,7 +48,6 @@ export let project: NormalizedProject = createProject({
   icons,
   tags,
   summaryMarkdown,
-  portfolio,
 });
 
 export default project;

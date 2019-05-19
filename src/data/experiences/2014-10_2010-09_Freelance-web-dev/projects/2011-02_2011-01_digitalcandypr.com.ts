@@ -29,10 +29,6 @@ export let icons = [
   `Java`,
 ];
 
-export let portfolio = {
-  link: `https://micnigh.github.io/digitalcandypr.com/`,
-};
-
 export let project: NormalizedProject = createProject({
   title,
   start,
@@ -41,7 +37,6 @@ export let project: NormalizedProject = createProject({
   icons,
   tags,
   summaryMarkdown,
-  portfolio,
 });
 
 export default project;
