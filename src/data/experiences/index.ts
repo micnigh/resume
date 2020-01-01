@@ -90,6 +90,7 @@ let experiencesAsArray: NormalizedExperience[] = [
   require('./2014-10_2010-09_Freelance-web-dev/').default,
   require('./2016-02_Sr-Web-Developer-GDIT/').default,
   require('./2018-02_Sr-Web-Developer-Home-Depot/').default,
+  require('./2019-04_Sr-Web-Developer-MacMillan/').default,
   require('./hobbies/').default,
 ];
 

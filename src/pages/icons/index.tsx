@@ -25,3 +25,7 @@ export const Git = require('!svg-react-loader!svg-icon/dist/svg/logos/git.svg');
 export const React = require('!svg-react-loader?name=ReactSVG!devicon/icons/react/react-original.svg');
 export const Webpack = require('!svg-react-loader?!svg-icon/dist/svg/logos/webpack.svg');
 export const Python = require('!svg-react-loader?!svg-icon/dist/svg/logos/python.svg');
+export const Jenkins = require('!svg-react-loader?!svg-icon/dist/svg/logos/jenkins.svg');
+export const AWS = require('!svg-react-loader?!devicon/icons/amazonwebservices/amazonwebservices-original.svg');
+export const Jest = require('!svg-react-loader?!svg-icon/dist/svg/logos/jest.svg');
+export const Express = require('!svg-react-loader?!svg-icon/dist/svg/logos/express.svg');
