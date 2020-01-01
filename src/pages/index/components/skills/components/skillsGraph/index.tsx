@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as MomentTS from 'moment'; import MomentBabel from 'moment'; const moment = typeof MomentTS === 'function' ? MomentTS : MomentBabel; // moment import uses export = {} syntax - which works differently in typescript and babel, so we load both and pick the one that worked :'(
 import { throttle } from 'lodash';
 
-import { Container, Content, Guidelines, Guideline, GuidelineLabel, GuidelineLine, Graph, GraphBar, GraphBarTitle } from './styles';
+import { Container, Content, Graph, GraphBar, GraphBarTitle } from './styles';
 
 import { generateTooltips } from '../../../../../../misc/tooltip';
 import { Tag } from '../../../../../../data/experiences/index.types';
@@ -123,24 +123,6 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
     return (
       <Container innerRef={e => this._element = e}>
         <Content>
-          <Guidelines>
-            {[...Array(Math.floor(yearsToRender)).keys()].map(y => y + 1).map(y => {
-              let percentageX = Math.floor((y / yearsToRender) * 100);
-              return (
-                <Guideline style={{ left: `${percentageX}%`}} key={y}>
-                  {y === 1 ?
-                    <GuidelineLabel top singular >{`${y} Year`}</GuidelineLabel> :
-                    <GuidelineLabel top plural >{`${y}`}</GuidelineLabel>
-                  }
-                  <GuidelineLine/>
-                  { y === 1 ?
-                    <GuidelineLabel bottom singular >{`${y} Year`}</GuidelineLabel> :
-                    <GuidelineLabel bottom plural >{`${y}`}</GuidelineLabel>
-                  }
-                </Guideline>
-              );
-            })}
-          </Guidelines>
           <Graph>
             {tags.map((t, index) => {
               let normalizedDuration = moment.duration(t.duration).asMilliseconds() / moment.duration(maxDuration).asMilliseconds();

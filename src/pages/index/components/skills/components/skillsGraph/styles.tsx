@@ -10,59 +10,6 @@ export const Content = styled.div`
 position: relative;
 `;
 
-export const Guidelines = styled.div`
-  position: absolute;
-  width: 100%;
-  height: calc(100% + 36px);
-  margin-top: -18px;
-  z-index: 5;
-`;
-
-export const Guideline = styled.div`
-  position: absolute;
-  height: 100%;
-`;
-
-export const GuidelineLabel = styled.div`
-  position: absolute;
-  white-space: nowrap;
-  color: #888;
-  font-size: ${globalStyles.font.size * 1.5}px;
-  line-height: ${globalStyles.font.size * 1.5}px;
-
-  ${p => p.top && css`
-  top: -${globalStyles.font.size * 1.5 + 4}px;
-  `}
-
-  ${p => p.bottom && css`
-  bottom: -${globalStyles.font.size * 1.5 + 4}px;
-  `}
-
-  ${p => p.singular && css`
-  margin-left: -30.6px;
-  `}
-
-  ${p => p.plural && css`
-  margin-left: -4px;
-  `}
-
-  @media print {
-    color: ${globalStyles.color.text};
-  }
-`;
-
-export const GuidelineLine = styled.div`
-  position: absolute;
-  background-color: ${globalStyles.color.textSecondary};
-  width: 0px;
-  padding: 0px 1px;
-  height: 100%;
-
-  @media print {
-    background-color: ${globalStyles.color.text};
-  }
-`;
-
 export const Graph = styled.div`
   position: relative;
   z-index: 10;
