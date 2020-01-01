@@ -12,7 +12,7 @@ export let end = ``;
 export let duration = moment.duration(moment().diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-Test student competency to generate studyplan for areas that need improvement
+Test student competency to generate studyplan on areas that need improvement
 `;
 
 export let tags = parentTags.concat(createTags(duration, [

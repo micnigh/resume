@@ -4,7 +4,7 @@ import { createProject, createTags } from '../..';
 
 import { tags as parentTags } from '..';
 
-export let title = `Pathfinder2`;
+export let title = `Pathfinder 2`;
 
 export let start = `2019-10`;
 export let end = ``;

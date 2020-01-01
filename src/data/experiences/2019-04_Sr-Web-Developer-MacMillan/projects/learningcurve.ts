@@ -11,7 +11,7 @@ export let end = ``;
 export let duration = moment.duration(moment().endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-Review topics by answering questions until a target score is reached
+Learn topics by answering questions until a target score is reached
 
 `;
 
