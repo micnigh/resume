@@ -34,7 +34,7 @@ export class TemplateWrapper extends React.Component<any, any> {
   render() {
     const { children } = this.props;
     return (
-      <Container innerRef={e => this._element = e}>
+      <Container ref={e => this._element = e}>
         {children}
       </Container>
     );

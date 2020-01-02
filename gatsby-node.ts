@@ -24,15 +24,15 @@ export const onCreatePage = async ({ page, actions }: any) => {
   if (isPageEntry) {
     // page entry - adjust path and create
     const newPath = page.path.replace(/\.page/g, '').replace(/index\//g, '');
-    deletePage({ path: page.path });
+    deletePage({ ...page, path: page.path });
     page.path = newPath;
     createPage(page);
   } else if (!isRootLevelPage) {
     // not a page entry or root level page, remove
-    deletePage(page);
+    deletePage({ ...page, path: page.path });
   } else {
     // guess we don't need it?
-    deletePage(page);
+    deletePage({ ...page, path: page.path });
   }
 };
 

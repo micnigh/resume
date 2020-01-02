@@ -1,14 +1,15 @@
 const selector = `*[title]`;
 
 export const generateTooltips = (element: HTMLElement | Document | null = document) => {
-  const tippy = require('tippy.js');
+  const tippy = require('tippy.js').default;
   element = element ? element : document;
-  const elements = Array.from(element.querySelectorAll(selector));
+  let elements = Array.from(element.querySelectorAll(selector));
+  elements = elements.filter(e => e.attributes['title'].value.length > 0);
   return tippy(elements, {
-    position: 'top',
+    placement: 'top',
     animation: 'fade',
     duration: 100,
     arrow: true,
-    dynamicTitle: true
-  });
+    content: (e: HTMLElement) => e.attributes['title'].value,
+  }) as any[];
 };

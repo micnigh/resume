@@ -29,7 +29,7 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
 
   _element: HTMLElement | null = null;
   _elements = {};
-  tooltips = null;
+  tooltips = [] as any[];
 
   state = {
     fullTagWidth: {},
@@ -98,9 +98,7 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
   }
 
   componentWillUpdate() {
-    if (this.tooltips) {
-      this.tooltips.destroyAll();
-    }
+    this.tooltips.forEach(t => t.destroy());
   }
 
   componentDidUpdate() {
@@ -121,7 +119,7 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
     let yearsToRender = moment.duration(maxDuration).asYears();
 
     return (
-      <Container innerRef={e => this._element = e}>
+      <Container ref={e => this._element = e}>
         <Content>
           <Graph>
             {tags.map((t, index) => {
@@ -130,8 +128,8 @@ export class SkillsGraph extends React.Component<{ tags: Tag[] }, any> {
               let shorthand = false;
               shorthand = this.state.isTagShorthand && this.state.isTagShorthand[`${t.name}`];
               return (
-                <GraphBar key={index} style={{ width: `${percentageWidth}%` }} innerRef={e => this._elements[`${t.name}Bar`] = e} data-position={`right`} title={shorthand ? `${t.name}` : ``}>
-                  <GraphBarTitle innerRef={e => this._elements[`${t.name}Title`] = e}>{shorthand ? t.shorthand : t.name}</GraphBarTitle>
+                <GraphBar key={index} style={{ width: `${percentageWidth}%` }} ref={e => this._elements[`${t.name}Bar`] = e} data-tippy-placement={`right`} title={shorthand ? `${t.name}` : ``}>
+                  <GraphBarTitle ref={e => this._elements[`${t.name}Title`] = e}>{shorthand ? t.shorthand : t.name}</GraphBarTitle>
                 </GraphBar>
               );
             })}

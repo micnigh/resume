@@ -16,13 +16,13 @@ export class Header extends React.Component {
             target={`_blank`}
             href={`https://github.com/micnigh/`}
           >
-            <SVGGithub title={`Check out my github`} data-position={`bottom`}/>
+            <SVGGithub title={`Check out my github`} data-tippy-placement={`bottom`}/>
           </SVGLink>
           <SVGLink
             target={`_blank`}
             href={`https://www.linkedin.com/in/michaelnigh`}
           >
-            <SVGLinkedin title={`Visit my LinkedIn`} data-position={`bottom`}/>
+            <SVGLinkedin title={`Visit my LinkedIn`} data-tippy-placement={`bottom`}/>
           </SVGLink>
         </SocialNetworkLinks>
       </Container>
