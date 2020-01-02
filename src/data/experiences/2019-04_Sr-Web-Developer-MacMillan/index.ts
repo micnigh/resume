@@ -11,11 +11,12 @@ export let duration = moment.duration(moment().endOf(`month` as any).diff(moment
 export let summaryMarkdown = `
 **Contracted through TekSystems**
 
-Support production applications of the Learning Support Tools team
+Support production applications for the Learning Support Tools team.
 
-Typical week: bug fix, feature work, coordinate with other teams, meet with architects to implement good design patterns, deploy to AWS with SRE support
+LST is a small team of developers maintaining multiple production applications.  As much of the team is remote good communication is a must.  Pair programming is strongly encouraged.
 
-Good communication required as org is mostly remote;  pair programming strongly encouraged
+A typical week may include bug fixes, feature work, coordination with other teams, meetings with architects, and deploys to AWS with SRE approval.
+
 `;
 
 export let tags = createTags(duration, [
