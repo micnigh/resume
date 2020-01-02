@@ -36,6 +36,19 @@ export const onCreatePage = async ({ page, actions }: any) => {
   }
 };
 
+// https://github.com/gatsbyjs/gatsby/issues/11934#issuecomment-547253006
+export const onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage.startsWith("develop")) {
+    actions.setWebpackConfig({
+      resolve: {
+        alias: {
+          "react-dom": "@hot-loader/react-dom",
+        },
+      },
+    })
+  }
+}
+
 export const onPostBuild = async () => {
   await buildPdf();
 };
