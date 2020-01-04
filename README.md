@@ -21,6 +21,9 @@ yarn run develop
 # build static site
 yarn run build
 
+# view built static site locally
+npx serve public
+
 # run tests and watch
 yarn run test:watch
 
