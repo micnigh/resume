@@ -11,6 +11,13 @@ export const wrapPageElement = ({ element, props }) => {
   const initialState =  merge({}, data);
   const store = createStore(initialState);
 
+  if (module.hot) {
+    module.hot.accept('./src/data/', () => {
+      const nextData = require('./src/data/').default;
+      store.dispatch({ type: 'REPLACE_STATE', payload: nextData });
+    });
+  }
+
   const ConnectedRootElement = (
     <Provider store={store}>
       <Layout {...props}>
