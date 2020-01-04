@@ -84,13 +84,13 @@ let createTag = (options: Tag): Tag => {
 };
 
 let experiencesAsArray: NormalizedExperience[] = [
-  require('./2007-01_2005-01_duovu.com_Duovu-Inc/').default,
-  require('./2012-03_2011-12_Mobile-Game-Dev_Xtracool/').default,
-  require('./2012-08_2012-04_Technical-Lead_Sutisoft/').default,
-  require('./2014-10_2010-09_Freelance-web-dev/').default,
-  require('./2016-02_Sr-Web-Developer-GDIT/').default,
-  require('./2018-02_Sr-Web-Developer-Home-Depot/').default,
   require('./2019-04_Sr-Web-Developer-MacMillan/').default,
+  require('./2018-02_Sr-Web-Developer-Home-Depot/').default,
+  require('./2016-02_Sr-Web-Developer-GDIT/').default,
+  require('./2014-10_2010-09_Freelance-web-dev/').default,
+  require('./2012-08_2012-04_Technical-Lead_Sutisoft/').default,
+  require('./2012-03_2011-12_Mobile-Game-Dev_Xtracool/').default,
+  require('./2007-01_2005-01_duovu.com_Duovu-Inc/').default,
   require('./hobbies/').default,
 ];
 

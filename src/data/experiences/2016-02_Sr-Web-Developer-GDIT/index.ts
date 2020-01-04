@@ -70,9 +70,9 @@ export let tags = _.uniq(tagsDeveloper.concat(tagsSeniorDeveloper));
 export let icons = [];
 
 export let projects = ([
-  require('./projects/post-assess').default,
-  require('./projects/monterey-phoenix').default,
   require('./projects/hurricane-decision-simulator').default,
+  require('./projects/monterey-phoenix').default,
+  require('./projects/post-assess').default,
 ] as NormalizedProject[]).map(p => p.id) as string[];
 
 export let experience: NormalizedExperience = createExperience({

@@ -55,7 +55,7 @@ export class Experience extends React.Component<{ experience: ExperienceType | P
           {!renderProjects ? null :
             <Projects>
               <H level={headerLevel} inline >PROJECTS</H>
-              {projects.sort(sortExperience).map((project: ProjectType, i: number) => (
+              {projects.map((project: ProjectType, i: number) => (
                 <Experience experience={project} level={headerLevel + 1} key={i} />
               ))}
             </Projects>

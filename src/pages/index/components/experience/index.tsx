@@ -26,8 +26,7 @@ export const sortExperience = (a: ExperienceType | ProjectType, b: ExperienceTyp
 export const mapStateToProps = (state: any, ownProps: any) => {
   let experiences = Object
     .keys(state.entities.experiences)
-    .map(id => denormalizeExperience(id, state.entities))
-    .sort(sortExperience);
+    .map(id => denormalizeExperience(id, state.entities));
   return {
     experiences,
   };

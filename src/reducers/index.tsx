@@ -1,11 +1,11 @@
-import { Tag, Project } from "../data/experiences/index.types";
+import { Tag, Project, NormalizedExperience, NormalizedProject } from "../data/experiences/index.types";
 import Experience from "../pages/index/components/experience/components/experience";
 
 const initialState = {
   entities: {
     tags: {} as {[key: string]: Tag},
-    experiences: {} as {[key: string]: Experience},
-    projects: {} as {[key: string]: Project},
+    experiences: {} as {[key: string]: NormalizedExperience},
+    projects: {} as {[key: string]: NormalizedProject},
   },
 };
 
