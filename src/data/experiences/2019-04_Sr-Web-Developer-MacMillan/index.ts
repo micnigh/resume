@@ -15,7 +15,7 @@ Support production applications for the Learning Support Tools team.
 
 LST is a small team of developers maintaining multiple production applications.  As much of the team is remote good communication is a must.  Pair programming is strongly encouraged.
 
-A typical week may include bug fixes, feature work, coordination with other teams, meetings with architects, and deploys to AWS with SRE approval.
+A typical week may include bug fixes, feature work, coordination with other teams, meetings with architects, and coordinating deploys to AWS with SRE's.
 
 `;
 
@@ -31,7 +31,7 @@ export let projects = ([
   require('./projects/pathfinder').default,
   require('./projects/learningcurve').default,
   require('./projects/reading').default,
-  require('./projects/pathfinder2').default,
+  // require('./projects/pathfinder2').default,
 ] as NormalizedProject[]).map(p => p.id) as string[];
 
 export let experience: NormalizedExperience = createExperience({
