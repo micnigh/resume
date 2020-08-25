@@ -4,12 +4,19 @@ import { createExperience, createTags } from '..';
 
 export let title = `Senior Web Developer - MacMillan`;
 
+const tekStart = `2019-04`;
+const tekEnd = `2020-07`
+
+const fulltimeStart = `2020-04`;
+
 export let start = `2019-04`;
 export let end = ``;
 export let duration = moment.duration(moment().endOf(`month` as any).diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-**Contracted through TekSystems**
+**Senior Software Engineer**  ${fulltimeStart} to present
+
+**Senior Software Engineer - Contracted through TekSystems** ${tekStart} to ${tekEnd}
 
 Support production applications for the Learning Support Tools team.
 
