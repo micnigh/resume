@@ -12,7 +12,7 @@ export let end = ``;
 export let duration = moment.duration(moment().diff(moment(start))).toJSON();
 
 export let summaryMarkdown = `
-Ebook and note taking tool
+Ebook reader and note taking tool
 `;
 
 export let tags = parentTags.concat(createTags(duration, [
