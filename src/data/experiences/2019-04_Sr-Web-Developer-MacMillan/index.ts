@@ -7,7 +7,7 @@ export let title = `Senior Web Developer - MacMillan`;
 const tekStart = `2019-04`;
 const tekEnd = `2020-07`
 
-const fulltimeStart = `2020-04`;
+const fulltimeStart = `2020-07`;
 
 export let start = `2019-04`;
 export let end = ``;
