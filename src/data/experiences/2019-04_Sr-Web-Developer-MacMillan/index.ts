@@ -2,7 +2,7 @@ import * as MomentTS from 'moment'; import MomentBabel from 'moment'; const mome
 import { NormalizedExperience, NormalizedProject } from '../index.types';
 import { createExperience, createTags } from '..';
 
-export let title = `Senior Web Developer - MacMillan`;
+export let title = `Senior Software Engineer - MacMillan`;
 
 const tekStart = `2019-04`;
 const tekEnd = `2020-07`
